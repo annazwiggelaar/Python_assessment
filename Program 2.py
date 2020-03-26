@@ -3,7 +3,7 @@
 import random
 
 print("This program will draw words at random. The next program contains "
-      "your bingo card.\nIf one of the word drawn here is on your bingo "
+      "your bingo card.\nIf one of the words drawn here is on your bingo "
       "card, you can cross it off in the next program.\nPlease answer "
       "'yes' when you are ready to see the word.")
 

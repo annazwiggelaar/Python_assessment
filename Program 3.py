@@ -1,6 +1,7 @@
+# Program by Anna Zwiggelaar and Lieke Spoelstra.
+
 import random
 
-#   Program by Anna Zwiggelaar and Lieke Spoelstra.
 
 bingo_list = []
 random_bingo_list = []
@@ -24,25 +25,19 @@ def generate_card(word_list, rand_list):
     x = rand_list
     a = 0
     card = [[x[a], x[a + 1], x[a + 2], x[a + 3], x[a + 4]], [x[a + 5], x[a + 6], x[a + 7], x[a + 8], x[a + 9]],
-              [x[a + 10], x[a + 11], x[a + 12], x[a + 13], x[a + 14]],
-              [x[a + 15], x[a + 16], x[a + 17], x[a + 18], x[a + 19]],
-              [x[a + 20], x[a + 21], x[a + 22], x[a + 23], x[a + 24]]]
+            [x[a + 10], x[a + 11], x[a + 12], x[a + 13], x[a + 14]],
+            [x[a + 15], x[a + 16], x[a + 17], x[a + 18], x[a + 19]],
+            [x[a + 20], x[a + 21], x[a + 22], x[a + 23], x[a + 24]]]
     return card
 
 
-def print_card(card):
-    print(card[0], "\n", card[1], "\n", card[2], "\n", card[3], "\n", card[4])
+def print_card(card):                                 # print bingo card, equal distance between words
+    for row in card:
+        print("{: >20} {: >20} {: >20} {: >20} {: >20}".format(*row))
 
 
-def strike(text):
-    result = " "
-    for c in text:
-        result = result + c + '\u0336'
-    return result
-
-
-def mark_word(coordinate1, coordinate2, card):
-    card[coordinate1][coordinate2] = strike(card[coordinate1][coordinate2])
+def mark_word(coordinate1, coordinate2, card):          # replace word that was shown with an X
+    card[coordinate1][coordinate2] = "X"
 
 
 def play_game(word_list, rand_list):
